@@ -21,8 +21,9 @@ outputs = { self, nixpkgs, flake-utils }:
         # Installing both version for aapt2 and version that flutter wants
         buildToolsVersions = [ buildToolsVersionForAapt2 "30.0.3" ];
         platformVersions = [ "33" "28" ];
-        abiVersions = [ "armeabi-v7a" "arm64-v8a" ];
+        abiVersions = [ "armeabi-v7a" "arm64-v8a" "x86_64" ];
         includeEmulator = true;
+        includeSystemImages = true;
         emulatorVersion = "34.1.9";
       };
       androidSdk = androidComposition.androidsdk;
